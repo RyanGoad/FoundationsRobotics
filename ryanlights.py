@@ -41,7 +41,6 @@ def main():
 
     finally:
         rvr.sensor_control.clear()
-        rvr.close()
 
         # Delay to allow RVR issue command before closing
         time.sleep(.5)
