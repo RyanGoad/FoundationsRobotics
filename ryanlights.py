@@ -26,8 +26,8 @@ def main():
         rvr.led_control.set_all_leds_rgb(red=255, green=144, blue=0)
 
         rvr.sensor_control.add_sensor_data_handler(
-            service=RvrStreamingServices.accelerometer,
-            handler=accelerometer_handler
+            service=RvrStreamingServices.ambient_light,
+            handler=ambient_light_handler
         )
 
         rvr.sensor_control.start(interval=250)
