@@ -11,7 +11,7 @@ def ambient_light_handler(ambient_light_data):
 def main():
     rvr.wake()
     while false:
-        getData()
+        setLights(getData())
         
               
 def setLights(brightness):
@@ -23,3 +23,4 @@ def getData():
         handler=ambient_light_handler
     )
     rvr.sensor_control.start(interval=250)
+    return ambient_light_data
