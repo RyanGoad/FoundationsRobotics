@@ -21,8 +21,6 @@ def ambient_light_handler(ambient_light_data):
     
 
 def main():
-    """ This program demonstrates how to set the all the LEDs of RVR using the LED control helper.
-    """
     
     
     
