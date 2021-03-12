@@ -15,15 +15,17 @@ rvr = SpheroRvrObserver()
 #sensor streaming
 def ambient_light_handler(ambient_light_data):
     print('ambient light data response: ', ambient_light_data)
-    print('get: ' ambient_light_data.get('AmbientLight').get('Light', 7))
     global brightness
     brightness=ambient_light_data.get('AmbientLight').get('Light', 0)
+    print(brightness)
     
 
 def main():
     """ This program demonstrates how to set the all the LEDs of RVR using the LED control helper.
     """
-
+    
+    
+    
     try:
         rvr.wake()
 
@@ -53,7 +55,7 @@ def main():
         rvr.led_control.set_all_leds_rgb(red=brightness, green=brightness, blue=brightness)
 
         # Delay to show LEDs change
-        time.sleep(1)
+        #time.sleep(1)
         
 
 
