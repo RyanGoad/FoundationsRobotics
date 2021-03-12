@@ -43,6 +43,8 @@ def main():
         print('brightness at logic: ', brightness)
         rvr.led_control.set_all_leds_rgb(red=brightness, green=brightness, blue=brightness)
 
+        while True:
+            time.sleep(1)
         # Delay to show LEDs change
         #time.sleep(1)
         
