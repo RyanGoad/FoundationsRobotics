@@ -14,16 +14,16 @@ rvr = SpheroRvrObserver()
 
 #sensor streaming
 def ambient_light_handler(ambient_light_data):
-    print('ambient light data response: ', ambient_light_data)
     global brightness
     brightness=ambient_light_data.get('AmbientLight').get('Light', 0)
     print(brightness)
-    
+    if brightness > 255:
+        brightness=255
+    brightness=255-brightness
 
+    rvr.led_control.set_all_leds_rgb(red=brightness, green=brightness, blue=brightness)
+    
 def main():
-    
-    
-    
     try:
         rvr.wake()
 
@@ -45,19 +45,11 @@ def main():
         #pseudocode contribution
         global brightness
         print('brightness at logic: ', brightness)
-        if brightness > 255:
-            brightness=255
-        brightness=255-brightness
-        #may need to create new variable to assign 255-brightness
-        #or declare brightness as global or nonlocal e.g. global brightness \n if brightness...
-        
-        rvr.led_control.set_all_leds_rgb(red=brightness, green=brightness, blue=brightness)
+
 
         # Delay to show LEDs change
         #time.sleep(1)
         
-
-
     except KeyboardInterrupt:
         print('\nProgram terminated with keyboard interrupt.')
 
