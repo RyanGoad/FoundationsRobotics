@@ -1,5 +1,3 @@
-# ryanrev2 with actual functions
-
 import os
 import sys
 import time
@@ -17,9 +15,9 @@ rvr = SpheroRvrObserver()
 #sensor streaming
 def ambient_light_handler(ambient_light_data):
     print('ambient light data response: ', ambient_light_data)
-    print('get: ' ambient_light_data.get('Ambient_Light').get('Light', 7))
+    print('get: ' ambient_light_data.get('AmbientLight').get('Light', 7))
     global brightness
-    brightness=ambient_light_data.get('Ambient_Light').get('Light', 0)
+    brightness=ambient_light_data.get('AmbientLight').get('Light', 0)
     
 
 def main():
