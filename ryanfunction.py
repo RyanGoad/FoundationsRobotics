@@ -37,15 +37,10 @@ def main():
         )
 
         rvr.sensor_control.start(interval=250)
-
-        while True:
-            # Delay to allow RVR to stream sensor data
-            time.sleep(1)
         
         #pseudocode contribution
         global brightness
         print('brightness at logic: ', brightness)
-
 
         # Delay to show LEDs change
         #time.sleep(1)
