@@ -44,6 +44,7 @@ def main():
         
         #pseudocode contribution
         global brightness
+        print('brightness at logic: ', brightness)
         if brightness > 255:
             brightness=255
         brightness=255-brightness
