@@ -17,7 +17,7 @@ rvr = SpheroRvrObserver()
 #sensor streaming
 def ambient_light_handler(ambient_light_data):
     print('ambient light data response: ', ambient_light_data)
-    brightness=ambient_light_data
+    brightness=ambient_light_data.get("Light")
     
 
 def main():
@@ -32,8 +32,8 @@ def main():
         
         #sensor streaming        
         rvr.sensor_control.add_sensor_data_handler(
-            service=RvrStreamingServices.accelerometer,
-            handler=accelerometer_handler
+            service=RvrStreamingServices.ambient_light,
+            handler=ambient_light_handler
         )
 
         rvr.sensor_control.start(interval=250)
