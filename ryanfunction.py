@@ -21,7 +21,7 @@ def ambient_light_handler(ambient_light_data):
         brightness=255
     brightness=255-brightness
 
-    rvr.led_control.set_all_leds_rgb(red=brightness, green=brightness, blue=brightness)
+    
     
 def main():
     try:
@@ -41,6 +41,7 @@ def main():
         #pseudocode contribution
         global brightness
         print('brightness at logic: ', brightness)
+        rvr.led_control.set_all_leds_rgb(red=brightness, green=brightness, blue=brightness)
 
         # Delay to show LEDs change
         #time.sleep(1)
