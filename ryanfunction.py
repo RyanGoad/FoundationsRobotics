@@ -20,8 +20,7 @@ def ambient_light_handler(ambient_light_data):
     if brightness > 255:
         brightness=255
     brightness=255-brightness
-
-    
+    rvr.led_control.set_all_leds_rgb(red=brightness, green=brightness, blue=brightness)    
     
 def main():
     try:
@@ -36,12 +35,7 @@ def main():
             handler=ambient_light_handler
         )
 
-        rvr.sensor_control.start(interval=250)
-        
-        #pseudocode contribution
-        global brightness
-        print('brightness at logic: ', brightness)
-        rvr.led_control.set_all_leds_rgb(red=brightness, green=brightness, blue=brightness)
+        rvr.sensor_control.start(interval=250)        
 
         while True:
             time.sleep(1)
