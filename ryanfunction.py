@@ -17,6 +17,7 @@ rvr = SpheroRvrObserver()
 #sensor streaming
 def ambient_light_handler(ambient_light_data):
     print('ambient light data response: ', ambient_light_data)
+    print('get: ' ambient_light_data.get("Light", 7))
     global brightness
     brightness=ambient_light_data.get("Light", 0)
     
